@@ -1,6 +1,6 @@
 # Unit tests for packaging_treasure.py
 import random
-from unittest.mock import patch
+from unittest.mock import patch, Mock
 from .packaging_treasure import random_move, outcome, update_dungeon, dungeon1, dungeon2, run_to_result, success_chance
 import copy
 
@@ -21,6 +21,8 @@ def test_random_move():
         mock_choice.assert_called_with(network[current_loc])
         
 
+##
+#print(dungeon1)
 def test_outcome():
     assert outcome(dungeon1)==-1
 
@@ -33,6 +35,15 @@ def test_update_dungeon():
 def test_success_change_dungeon1_zero():
     assert success_chance(dungeon1)==0
 
+def test_run_to_result():
+    """Test that for a know outcome the function proceeds as expected
+    """
+    
+    with patch('packaging_treasure.packaging_treasure.outcome') as mock_outcome:
+        mock_outcome.return_value = 0
+        assert run_to_result(dungeon1) == 0
+    
+    
 def test_success_change_dungeon2_one():
     assert success_chance(dungeon2)!=1
 
