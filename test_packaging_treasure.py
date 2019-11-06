@@ -1,7 +1,7 @@
 # Unit tests for packaging_treasure.py
 import random
-from unittest.mock import patch
-from .packaging_treasure import random_move, outcome, update_dungeon, dungeon1
+from unittest.mock import patch, Mock
+from .packaging_treasure import random_move, outcome, update_dungeon, dungeon1,run_to_result
 
 def test_random_move():
     """Test the random move function    
@@ -25,3 +25,13 @@ def test_random_move():
 def test_outcome():
     #print (dungeon1)
     assert outcome(dungeon1)==-1
+
+def test_run_to_result():
+    """Test that for a know outcome the function proceeds as expected
+    """
+    
+    with patch('packaging_treasure.packaging_treasure.outcome') as mock_outcome:
+        mock_outcome.return_value = 0
+        assert run_to_result(dungeon1) == 0
+    
+    
