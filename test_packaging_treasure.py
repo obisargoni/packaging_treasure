@@ -1,6 +1,5 @@
 # Unit tests for packaging_treasure.py
 import random
-from pytest import raises
 from unittest.mock import patch
 from .packaging_treasure import random_move, outcome, update_dungeon, dungeon1
 
