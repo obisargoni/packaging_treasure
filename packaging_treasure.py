@@ -16,18 +16,18 @@
 # # Treasure Hunting for Beginners: an AI testbed
 
 # We are going to look at a simple game, a modified version of one with a [long history](https://en.wikipedia.org/wiki/Hunt_the_Wumpus). Games of this kind have been used as test-beds for development of artificial intelligence.
-# 
+#
 # A *dungeon* is a network of connected *rooms*. One or more rooms contain *treasure*. Your character, the *adventurer*, moves between rooms, looking for the treasure.
 # A *troll* is also in the dungeon. The troll moves between rooms at random. If the troll catches the adventurer, you lose. If you find treasure before being eaten, you win. (In this simple version, we do not consider the need to leave the dungeon.)
-# 
+#
 # The starting rooms for the adventurer and troll are given in the definition of the dungeon.
-# 
+#
 # The way the adventurer moves is called a *strategy*. Different strategies are more or less likely to succeed.
-# 
+#
 # We will consider only one strategy this time - the adventurer will also move at random.
-# 
+#
 # We want to calculate the probability that this strategy will be successful for a given dungeon.
-# 
+#
 # We will use a "monte carlo" approach - simply executing the random strategy many times, and counting the proportion of times the adventurer wins.
 
 # Our data structure for a dungeon will be somewhat familiar from the Maze example:
@@ -37,7 +37,7 @@
 
 dungeon1 = {
     'treasure' : [1], # Room 1 contains treasure
-    'adventurer': 0, # The adventurer starts in room 0 
+    'adventurer': 0, # The adventurer starts in room 0
     'troll': 2, # The troll starts in room 2
     'network': [[1], #Room zero connects to room 1
                 [0,2], #Room one connects to rooms 0 and 2
@@ -118,13 +118,13 @@ def run_to_result(dungeon):
 
 dungeon2 = {
     'treasure' : [1], # Room 1 contains treasure
-    'adventurer': 0, # The adventurer starts in room 0 
+    'adventurer': 0, # The adventurer starts in room 0
     'troll': 2, # The troll starts in room 2
     'network': [[1], #Room zero connects to room 1
                 [0,2], #Room one connects to rooms 0 and 2
                 [1,3], #Room 2 connects to room 1 and 3
                 [2]] # Room 3 connects to room 2
-    
+
 }
 
 
@@ -163,14 +163,14 @@ success_chance(dungeon2)
 
 dungeon3 = {
     'treasure' : [2], # Room 2 contains treasure
-    'adventurer': 0, # The adventurer starts in room 0 
+    'adventurer': 0, # The adventurer starts in room 0
     'troll': 4, # The troll starts in room 4
     'network': [[1], #Room zero connects to room 1
                 [0,2], #Room one connects to rooms 0 and 2
                 [1,3], #Room 2 connects to room 1 and 3
                 [2, 4], # Room 3 connects to room 2 and 4
-                [3]] # Room 4 connects to room 3 
-    
+                [3]] # Room 4 connects to room 3
+
 }
 
 
@@ -191,7 +191,7 @@ success_chance(dungeon3)
 # Inside your top level folder, you should create a setup.py file to make the code installable. You should also create some other files, per the lectures, that should be present in all research software packages. (Hint, there are three of these.)
 
 # Your tidied-up version of the solution code should be in a sub-folder called `adventure` which will be the python package itself. It will contain an __init__.py file, and the code itself must be in a file called dungeon.py. This should define a class `Dungeon`: instead of a data structure and associated functions, you must refactor this into a class and methods.
-# 
+#
 # Thus, if you run python in your top-level folder, you should be able to `from adventure.dungeon import Dungeon`. If you cannot do this, you will receive zero marks.
 
 # You must create a command-line entry point, called hunt. This should use the entry_points facility in setup.py, to point toward a module designed for use as the entry point, in adventure/command.py. This should use the `Argparse` library. When invoked with `hunt mydungeon.yml --samples 500` the command must print on standard output the probability of finding the treasure in the specified dungeon, using the random walk strategy, after the specified number of test runs.
@@ -243,7 +243,3 @@ success_chance(dungeon3)
 # Total: 25 marks
 
 # In[ ]:
-
-
-
-
