@@ -11,7 +11,7 @@ extensions = [
 templates_path = ['_templates']
 source_suffix = '.rst'
 master_doc = 'index'
-project = u'Packaging Treasure'
+project = u'Hunt'
 copyright = u'2019, JL. Castro Gonzalez, K. Goldmann, T. Oruc, O. Thompson-Sargoni'
 version = '0.1'
 release = '0.1'
@@ -22,17 +22,17 @@ latex_elements = {
 }
 
 latex_documents = [
-  ('index', 'PackagingTreasure.tex', u'Packaging Treasure Documentation',
+  ('index', 'Hunt.tex', u'Hunt Documentation',
    u'JL. Castro Gonzalez, K. Goldmann, T. Oruc, O. Thompson-Sargoni', 'manual'),
 ]
 
 man_pages = [
-    ('index', 'PackagingTreasure', u'Packaging Treasure Documentation',
+    ('index', 'Hunt', u'Hunt Documentation',
      [u'JL. Castro Gonzalez, K. Goldmann, T. Oruc, O. Thompson-Sargoni'], 1)
 ]
 
 texinfo_documents = [
-  ('index', 'PackagingTreasure', u'Packaging Treasure Documentation',
-   u'JL. Castro Gonzalez, K. Goldmann, T. Oruc, O. Thompson-Sargoni', 'PackagingTreasure', 'We are hunting the wumpus!',
+  ('index', 'Hunt', u'Hunt Documentation',
+   u'JL. Castro Gonzalez, K. Goldmann, T. Oruc, O. Thompson-Sargoni', 'Hunt', 'We are hunting the wumpus!',
    'Miscellaneous'),
 ]
